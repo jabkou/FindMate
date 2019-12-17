@@ -1,0 +1,144 @@
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: inherit;
+    align-items: center;
+    background: transparent linear-gradient(180deg, #392250 0%, #301F3C 56%, #020202F0 100%) 0% 0% no-repeat padding-box;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 30%;
+    justify-content: center;
+    /* padding-bottom: 9em;*/
+}
+
+form .signs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: inherit;
+    align-items: center;
+}
+
+form > input {
+    padding-left: 0.5em;
+    margin: 0 1em 1em 1em;
+    background: transparent;
+    border-bottom: 2px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    /* font */
+    color: purple;
+    font-size: 1em;
+}
+form > input:active {
+    border-bottom: 2px solid white;
+}
+
+button {
+    margin: 0 1em 1em 1em;
+    border: 0.1em solid #665EFF;
+    border-radius: 2em;
+    color: white ;
+    background-color: transparent ;
+    min-height: 2em;
+
+    line-height: 1em;
+    font-size: 1em;
+}
+
+button.continue {
+    margin-top: 2em;
+}
+
+button.forgotPassword {
+    border: none;
+    color: gray ;
+}
+
+button.sign {
+    border: none;
+    color: gray ;
+    background-color: transparent ;
+    margin: 0em 2em 0em 2em;
+    font-size: 0.8em;
+    min-width: 6em;
+    text-align: center ;
+    min-height: 2.5em
+
+}
+
+button.sign#active {
+
+    border: 0.1em solid #665EFF;
+    border-radius: 2em;
+    color: white ;
+    background-color: transparent ;
+
+}
+
+div.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding-right: 10em;
+}
+
+div.logo > img {
+    width: 35em;
+}
+
+@media only screen and (max-device-width: 992px){
+    body {
+        font-size: 48px;
+    }
+    .container {
+        flex-direction: column;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    div.logo > img {
+        width: 7.5em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 18px;
+    }
+    .container {
+        flex-direction: column;
+    }
+
+    form {
+        width: 75%;
+    }
+
+    div.logo{
+        padding-right: unset;
+    }
+    div.logo > img {
+        width: 14em;
+    }
+}
