@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <link rel="Stylesheet" type="text/css" href="Public/css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Public/css/style.css" />
     <title>findMate</title>
 </head>
 <body>
 <div class="container">
     <div class="logo">
-        <img src="Public/img/logo.svg">
+        <img src="../../Public/img/logo.svg">
     </div>
     <form>
         <input name="email" type="text" placeholder="email@sth.com">

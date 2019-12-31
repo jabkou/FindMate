@@ -1,0 +1,92 @@
+.all {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: inherit;
+    width: inherit;
+    align-items: center;
+
+
+}
+
+.container {
+    justify-content: unset;
+    align-items: unset;
+    flex-direction: column;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    flex-basis: 40%;
+}
+
+.candidate {
+    display: block;
+    width: 26em;
+    height: 44em;
+}
+
+.candidate > img {
+    border-radius: 0 9em 0 0;
+    width: inherit;
+    height: 75%;
+}
+
+.candidate > div {
+    width: inherit;
+    height: 25%;
+    background-color: gainsboro;
+    border-radius: 0 0 0 6em;
+
+}
+
+.name {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    padding-top: 0.4em;
+}
+.info{
+    margin: 0 1.6em;
+    color: #767676;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 1.4em;
+}
+
+.tweet {
+    flex-basis: 30%;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo {
+    background-color: #352641;
+    border-radius: 4em;
+    height: 16em;
+    width: 22em;
+}
+
+.todobuttons {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bottombuttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
