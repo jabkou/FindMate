@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <link rel="Stylesheet" type="text/css" href="../../Public/css/style.css" />
     <link rel="Stylesheet" type="text/css" href="../../Public/css/board.css">
+    <script src="https://kit.fontawesome.com/67b82f3810.js" crossorigin="anonymous"></script>
     <title>findMate</title>
 </head>
 <body>
@@ -34,22 +35,28 @@
             <?php endforeach ?>
             </div>
         </div>
-        <div class="todobuttons">
-            <button>LIKEEE</button>
+        <div class="rightColumn">
+            <div class="todobuttons">
+                <button><i class="fas fa-rocket fa-6x"></i></button>
+            </div>
+            <div class="rightRow">
+                <button><i class="fas fa-times-circle fa-6x"></i></button>
+                <button><i class="fas fa-heart fa-6x"></i></button>
+            </div>
         </div>
     </div>
     <div class="bottom">
         <div class="bottombuttons">
-            <button>AA</button>
-            AA
+            <button><i class="far fa-user fa-2x"></i></button>
+            You
         </div>
         <div class="bottombuttons">
-            <button>bb</button>
-            bb
+            <button><i class="far fa-bell fa-2x"></i></button>
+            News
         </div>
         <div class="bottombuttons">
-            <button>cc</button>
-            cc
+            <button><i class="fas fa-gamepad fa-2x"></i></button>
+            Matches
         </div>
     </div>
 </div>

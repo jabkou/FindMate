@@ -5,8 +5,6 @@
     height: inherit;
     width: inherit;
     align-items: center;
-
-
 }
 
 .container {
@@ -48,6 +46,7 @@
     margin-bottom: 0.8em;
     padding-top: 0.4em;
 }
+
 .info{
     margin: 0 1.6em;
     color: #767676;
@@ -73,7 +72,6 @@
 }
 
 .todobuttons {
-    flex-basis: 30%;
     display: flex;
     justify-content: center;
 }
@@ -84,9 +82,42 @@
     justify-content: center;
 }
 
+.bottom button {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
 .bottombuttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    color: cornsilk;
+    margin-bottom: 1em;
+}
+
+.bottombuttons > button {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    margin-bottom: 0.5em;
+}
+
+.rightColumn {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rightRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.rightColumn button {
+    border: none;
+    border-radius: unset;
+    margin: 2em;
 }
