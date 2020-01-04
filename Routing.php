@@ -13,7 +13,7 @@ class Routing {
                 'controller' => 'BoardController',
                 'action' => 'getLatestCandidates'
             ],
-            'index' => [
+            'login' => [
                 'controller' => 'SecurityController',
                 'action' => 'login'
             ]
@@ -22,7 +22,7 @@ class Routing {
 
     public function run()
     {
-        $page = isset($_GET['page']) ? $_GET['page'] : 'index';
+        $page = isset($_GET['page']) ? $_GET['page'] : 'login';
 
         if (isset($this->routes[$page])) {
             $controller = $this->routes[$page]['controller'];
