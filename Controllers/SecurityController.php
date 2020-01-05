@@ -23,10 +23,21 @@ class SecurityController extends AppController {
                 return;
             }
 
+            $_SESSION["id"] = $user->getEmail();
+            $_SESSION["role"] = $user->getRole();
+
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}?page=board");
         }
 
         $this->render('login');
+    }
+
+    public function logout()
+    {
+        session_unset();
+        session_destroy();
+
+        $this->render('login', ['messages' => ['You have been successfully logged out!']]);
     }
 }

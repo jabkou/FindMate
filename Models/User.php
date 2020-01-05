@@ -30,4 +30,9 @@ class User
     {
         return $this->password;
     }
+
+    public function getRole(): array
+    {
+        return $this->role;
+    }
 }
