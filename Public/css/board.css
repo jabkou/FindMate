@@ -121,3 +121,7 @@
     border-radius: unset;
     margin: 2em;
 }
+
+#center {
+    align-items: center;
+}

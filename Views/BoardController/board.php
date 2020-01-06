@@ -11,12 +11,15 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="Stylesheet" type="text/css" href="../../Public/css/style.css" />
     <link rel="Stylesheet" type="text/css" href="../../Public/css/board.css">
     <script src="https://kit.fontawesome.com/67b82f3810.js" crossorigin="anonymous"></script>
     <title>findMate</title>
 </head>
 <body>
+<?php include(dirname(__DIR__).'/Common/navbar.php'); ?>
 <div class="container">
     <div class="all">
         <div class="tweet">
@@ -55,20 +58,7 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
             </div>
         </div>
     </div>
-    <div class="bottom">
-        <div class="bottombuttons">
-            <button><i class="far fa-user fa-2x"></i></button>
-            You
-        </div>
-        <div class="bottombuttons">
-            <button><i class="far fa-bell fa-2x"></i></button>
-            News
-        </div>
-        <div class="bottombuttons">
-            <button><i class="fas fa-gamepad fa-2x"></i></button>
-            Matches
-        </div>
-    </div>
+
 </div>
 </body>
 </html>
