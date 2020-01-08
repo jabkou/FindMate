@@ -9,7 +9,7 @@ class BoardController extends AppController {
 
     public function getLatestCandidates()
     {
-        $database = new Database();
+        $database = new Database();     //??
         $database->connect();
 
         $candidate1 = new Candidate('img_01.png', 19, 21, 'Alicja', 'Cod: MW');

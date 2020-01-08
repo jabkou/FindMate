@@ -2,23 +2,29 @@
 
 class User
 {
+    private $id;
     private $email;
     private $password;
     private $name;
-    private $surname;
+    private $age;
+    private $gender;
     private $role = ['ROLE_USER'];
 
     public function __construct(
         string $email,
         string $password,
         string $name,
-        string $surname
+        string $gender,
+        int $age,
+        int $id = null
     )
     {
+        $this->id = $id;
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
-        $this->surname = $surname;
+        $this->gender = $gender;
+        $this->age = $age;
     }
 
     public function getEmail(): string
@@ -26,7 +32,7 @@ class User
         return $this->email;
     }
 
-    public function getPassword()
+    public function getPassword() : string
     {
         return $this->password;
     }
@@ -34,5 +40,20 @@ class User
     public function getRole(): array
     {
         return $this->role;
+    }
+
+    public function getGender(): string
+    {
+        return $this->gender;
+    }
+
+    public function getAge(): int
+    {
+        return $this->age;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 }
