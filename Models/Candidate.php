@@ -1,34 +1,27 @@
 <?php
 
 class Candidate {
-    private $image;
-    private $range;
-    private $age;
+    private $id;
     private $name;
+    private $age;
+    private $location;
     private $game;
+    private $gender;
+    private $image;
 
-    public function __construct(string $image, int $range, int $age, string $name, string $game)
+    public function __construct(string $name, int $age, string $location, string $game,string $gender, string $image)
     {
-        $this->image = $image;
-        $this->range = $range;
-        $this->age = $age;
         $this->name = $name;
+        $this->age = $age;
+        $this->location = $location;
         $this->game = $game;
+        $this->gender = $gender;
+        $this->image = $image;
     }
 
-    public function getImage(): string
+    public function getId(): int
     {
-        return $this->image;
-    }
-
-    public function getRange(): int
-    {
-        return $this->range;
-    }
-
-    public function getAge(): int
-    {
-        return $this->age;
+        return $this->id;
     }
 
     public function getName(): string
@@ -36,9 +29,30 @@ class Candidate {
         return $this->name;
     }
 
+    public function getAge(): int
+    {
+        return $this->age;
+    }
+
+    public function getLocation(): string
+    {
+        return $this->location;
+    }
+
     public function getGame(): string
     {
         return $this->game;
     }
+
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    public function getGender(): string
+    {
+        return $this->gender;
+    }
+
 
 }

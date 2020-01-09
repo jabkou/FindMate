@@ -38,7 +38,7 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
                     <div class="name"><?= $candidate->getName() ?></div>
                     <div class="info">
                         <?= $candidate->getAge() ?> years old <br>
-                        <?= $candidate->getRange() ?> km away
+                        <?= $candidate->getLocation() ?>
                         <div>
                             <?= $candidate->getGame() ?>
                         </div>
