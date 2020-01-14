@@ -21,6 +21,12 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
 <body>
 <?php include(dirname(__DIR__).'/Common/navbar.php'); ?>
 <div class="container">
+            <?php foreach($candidates as $candidate): ?>
+            <?php
+            if(isset($_POST['button1'])) {
+    $candidate->like();
+}
+            ?>
     <div class="all">
         <div class="tweet">
             <div>
@@ -32,7 +38,6 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
         </div>
         <div class="board">
             <div class="candidate">
-            <?php foreach($candidates as $candidate): ?>
                 <img src="<?= '../Public/img/'.$candidate->getImage() ?>">
                 <div>
                     <div class="name"><?= $candidate->getName() ?></div>
@@ -45,20 +50,25 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
                     </div>
 
                 </div>
-            <?php endforeach ?>
             </div>
         </div>
         <div class="rightColumn">
             <div class="todobuttons">
                 <button><i class="fas fa-rocket fa-6x"></i></button>
             </div>
-            <div class="rightRow">
-                <button><i class="fas fa-times-circle fa-6x"></i></button>
-                <button><i class="fas fa-heart fa-6x"></i></button>
-            </div>
+                <form method="post">
+                    <div class="rightRow">
+                    <button type="submit" name="button1" > <i class="fas fa-times-circle fa-6x"></i> </button>>
+                    <button type="submit" name="button1" > <i class="fas fa-heart fa-6x"></i> </button>>
+                    </div>
+                </form>
+
         </div>
     </div>
+            <?php endforeach ?>
 
 </div>
+
+
 </body>
 </html>

@@ -10,12 +10,13 @@ class BoardController extends AppController {
 
     public function getLatestCandidates()
     {
-//        $database = new Database();     //??
-//        $database->connect();
+//        $likeDatabase = new Database();
+//        $likeDatabase->connect();
 
         $candidateRepository = new CandidateRepository();
 
-        $candidate = $candidateRepository->getCandidate(1);
+        $candidate = $candidateRepository->getCandidate(2);
+
 
 
         //$candidate1 = new Candidate('Alice', 19, "Cracov", 'Apex', 'Female', "img_01.png");

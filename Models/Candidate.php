@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__.'/../Database.php';
+
+
 class Candidate {
     private $id;
     private $name;
@@ -9,8 +12,11 @@ class Candidate {
     private $gender;
     private $image;
 
-    public function __construct(string $name, int $age, string $location, string $game,string $gender, string $image)
+    private $database;
+
+    public function __construct(int $id, string $name, int $age, string $location, string $game,string $gender, string $image)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->age = $age;
         $this->location = $location;
@@ -52,6 +58,22 @@ class Candidate {
     public function getGender(): string
     {
         return $this->gender;
+    }
+
+    public function like() {
+
+        unset($_POST['button1']);
+
+
+        $this->database = new Database();
+        $idd = $_SESSION['user_id'];
+
+        $stmt = $this->database->connect()->prepare("
+            INSERT INTO likes (id_user, id_liked_user, reaction, id_match)
+            VALUES ('$idd', '$this->id', '1', '0')
+        ");
+        $stmt->execute();
+
     }
 
 

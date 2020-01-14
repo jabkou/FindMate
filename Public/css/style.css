@@ -48,7 +48,7 @@ form > input {
     border-right: none;
 
     /* font */
-    color: purple;
+    color: gainsboro;
     font-size: 1em;
 }
 form > input:active {
@@ -107,6 +107,12 @@ div.logo {
 
 div.logo > img {
     width: 35em;
+}
+
+.messages {
+    color: #767676;
+    font-size: 0.7em;
+
 }
 
 @media only screen and (max-device-width: 992px){

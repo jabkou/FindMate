@@ -29,6 +29,7 @@ class CandidateRepository extends Repository {
         }
 
         return new Candidate(
+            $candidate2['id_user_data'],
             $candidate1['name'],
             $candidate1['age'],
             $candidate2['location'],
@@ -36,26 +37,5 @@ class CandidateRepository extends Repository {
             $candidate1['gender'],
             $candidate2['photo']
         );
-    }
-
-    public function getUsers(): array {
-        $result = [];
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users
-        ');
-        $stmt->execute();
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($users as $user) {
-            $result[] = new User(
-                $user['email'],
-                $user['password'],
-                $user['name'],
-                $user['surname'],
-                $user['id']
-            );
-        }
-
-        return $result;
     }
 }

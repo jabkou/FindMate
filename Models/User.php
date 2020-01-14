@@ -16,7 +16,7 @@ class User
         string $name,
         string $gender,
         int $age,
-        int $id = null
+        int $id
     )
     {
         $this->id = $id;

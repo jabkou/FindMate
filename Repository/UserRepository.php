@@ -24,28 +24,9 @@ class UserRepository extends Repository {
             $user['password'],
             $user['name'],
             $user['gender'],
-            $user['age']
+            $user['age'],
+            $user['id_user_data']
         );
     }
 
-    public function getUsers(): array {
-        $result = [];
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users
-        ');
-        $stmt->execute();
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($users as $user) {
-            $result[] = new User(
-                $user['email'],
-                $user['password'],
-                $user['name'],
-                $user['surname'],
-                $user['id']
-            );
-        }
-
-        return $result;
-    }
 }
