@@ -16,17 +16,14 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
     <link rel="Stylesheet" type="text/css" href="../../Public/css/style.css" />
     <link rel="Stylesheet" type="text/css" href="../../Public/css/board.css">
     <script src="https://kit.fontawesome.com/67b82f3810.js" crossorigin="anonymous"></script>
+    <?php include(dirname(__DIR__).'/Common/head.php'); ?>
     <title>findMate</title>
 </head>
 <body>
+<?php //unset($_POST['heart']); ?>
+
 <?php include(dirname(__DIR__).'/Common/navbar.php'); ?>
 <div class="container">
-            <?php foreach($candidates as $candidate): ?>
-            <?php
-            if(isset($_POST['button1'])) {
-    $candidate->like();
-}
-            ?>
     <div class="all">
         <div class="tweet">
             <div>
@@ -48,7 +45,6 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
                             <?= $candidate->getGame() ?>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -56,16 +52,12 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
             <div class="todobuttons">
                 <button><i class="fas fa-rocket fa-6x"></i></button>
             </div>
-                <form method="post">
                     <div class="rightRow">
-                    <button type="submit" name="button1" > <i class="fas fa-times-circle fa-6x"></i> </button>>
-                    <button type="submit" name="button1" > <i class="fas fa-heart fa-6x"></i> </button>>
+                    <button type="submit" name="cross" > <i class="fas fa-times-circle fa-6x"></i> </button>>
+                    <button type="submit" name="heart" onclick="likeUser(<?=$candidate->getId()?>)"> <i class="fas fa-heart fa-6x"></i> </button>>
                     </div>
-                </form>
-
         </div>
     </div>
-            <?php endforeach ?>
 
 </div>
 

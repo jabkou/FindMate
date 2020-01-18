@@ -20,6 +20,10 @@ class Routing {
             'logout' => [
                 'controller' => 'SecurityController',
                 'action' => 'logout'
+            ],
+            'user_like_user' => [
+                'controller' => 'BoardController',
+                'action' => 'like_user'
             ]
         ];
     }

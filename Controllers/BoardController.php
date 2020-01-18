@@ -15,7 +15,7 @@ class BoardController extends AppController {
 
         $candidateRepository = new CandidateRepository();
 
-        $candidate = $candidateRepository->getCandidate(2);
+        $candidate = $candidateRepository->getCandidate();
 
 
 
@@ -25,6 +25,16 @@ class BoardController extends AppController {
         $data = [$candidate];
 
 
-        $this->render('board', ['candidates' => $data]);
+        $this->render('board', ['candidate' => $candidate]);
+    }
+
+    public function like_user(): void
+    {
+        if (!isset($_POST['id'])) { http_response_code(404);
+        return;
+        }
+        $user = new CandidateRepository();
+        $user->like((int)$_POST['id']);
+        http_response_code(200);
     }
 }

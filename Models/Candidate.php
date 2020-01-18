@@ -4,7 +4,7 @@ require_once __DIR__.'/../Database.php';
 
 
 class Candidate {
-    private $id;
+    public $id;
     private $name;
     private $age;
     private $location;
@@ -62,7 +62,6 @@ class Candidate {
 
     public function like() {
 
-        unset($_POST['button1']);
 
 
         $this->database = new Database();
@@ -74,6 +73,17 @@ class Candidate {
         ");
         $stmt->execute();
 
+    }
+
+    public function cross() {
+        $this->database = new Database();
+        $idd = $_SESSION['user_id'];
+
+        $stmt = $this->database->connect()->prepare("
+            INSERT INTO likes (id_user, id_liked_user, reaction, id_match)
+            VALUES ('$idd', '$this->id', '0', '0')
+        ");
+        $stmt->execute();
     }
 
 

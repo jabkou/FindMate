@@ -7,6 +7,17 @@
     align-items: center;
 }
 
+.pls {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: inherit;
+    width: inherit;
+    align-items: center;
+
+}
+
 .container {
     justify-content: unset;
     align-items: unset;
