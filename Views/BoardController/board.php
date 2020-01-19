@@ -24,17 +24,13 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
 
 <?php include(dirname(__DIR__).'/Common/navbar.php'); ?>
 <div class="container">
-    <div class="all">
+    <div class="all" id="rel">
         <div class="tweet">
-            <div>
-                Gaming news
-            </div>
-            <div class="todo">
-
-            </div>
+            <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/IGN" data-tweet-limit="1" data-width="399" ></a>
+            <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div class="board">
-            <div class="candidate">
+            <div class="candidate" >
                 <img src="<?= '../Public/img/'.$candidate->getImage() ?>">
                 <div>
                     <div class="name"><?= $candidate->getName() ?></div>
@@ -53,7 +49,7 @@ if(!in_array('ROLE_USER', $_SESSION['role'])) {
                 <button><i class="fas fa-rocket fa-6x"></i></button>
             </div>
                     <div class="rightRow">
-                    <button type="submit" name="cross" > <i class="fas fa-times-circle fa-6x"></i> </button>>
+                    <button type="submit" name="cross" onclick="crossUser(<?=$candidate->getId()?>)"> <i class="fas fa-times-circle fa-6x"></i> </button>>
                     <button type="submit" name="heart" onclick="likeUser(<?=$candidate->getId()?>)"> <i class="fas fa-heart fa-6x"></i> </button>>
                     </div>
         </div>

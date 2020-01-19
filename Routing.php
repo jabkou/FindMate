@@ -24,6 +24,10 @@ class Routing {
             'user_like_user' => [
                 'controller' => 'BoardController',
                 'action' => 'like_user'
+            ],
+            'user_cross_user' => [
+                'controller' => 'BoardController',
+                'action' => 'cross_user'
             ]
         ];
     }

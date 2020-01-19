@@ -1,12 +1,33 @@
 function likeUser(id) {
-    if (!confirm('Do you want to like this user?')) {
-        return; }
+    if(id == 0){
+        alert('there is noone else');
+        return;
+    }
     const apiUrl = "http://localhost:8001";
     $.ajax({
         url : apiUrl + '/?page=user_like_user', method : "POST",
         data : {
             id : id },
         success: function() {
-            alert('Selected user successfully liked from database!');
+                $("#rel").load(" #rel");
+
         } });
+
+}
+
+function crossUser(id) {
+    if(id == 0){
+        alert('there is noone else');
+        return;
+    }
+    const apiUrl = "http://localhost:8001";
+    $.ajax({
+        url : apiUrl + '/?page=user_cross_user', method : "POST",
+        data : {
+            id : id },
+        success: function() {
+            $("#rel").load(" #rel");
+
+        } });
+
 }

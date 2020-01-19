@@ -26,7 +26,7 @@ class CandidateRepository extends Repository {
         $candidate2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 
         if($candidate2 == false || $candidate1 == false) {
-            return null;
+            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', 'img_01.png');
         }
 
         return new Candidate(
@@ -89,6 +89,21 @@ class CandidateRepository extends Repository {
         $stmt = $this->database->connect()->prepare("
             INSERT INTO likes (id_user, id_liked_user, reaction, id_match)
             VALUES ('$idUser', '$idCandidate', '1', '0')
+        ");
+        $stmt->execute();
+
+    }
+
+    public function cross(int $id) {
+
+        $this->database = new Database();
+        $idUser = $_SESSION['user_id'];
+        $idCandidate = $id;
+
+
+        $stmt = $this->database->connect()->prepare("
+            INSERT INTO likes (id_user, id_liked_user, reaction, id_match)
+            VALUES ('$idUser', '$idCandidate', '0', '0')
         ");
         $stmt->execute();
 

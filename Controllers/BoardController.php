@@ -37,4 +37,14 @@ class BoardController extends AppController {
         $user->like((int)$_POST['id']);
         http_response_code(200);
     }
+
+    public function cross_user(): void
+    {
+        if (!isset($_POST['id'])) { http_response_code(404);
+            return;
+        }
+        $user = new CandidateRepository();
+        $user->cross((int)$_POST['id']);
+        http_response_code(200);
+    }
 }
