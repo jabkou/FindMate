@@ -26,7 +26,7 @@ class CandidateRepository extends Repository {
         $candidate2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 
         if($candidate2 == false || $candidate1 == false) {
-            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', 'img_01.png');
+            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', 'img_00.jpg');
         }
 
         return new Candidate(
@@ -107,5 +107,27 @@ class CandidateRepository extends Repository {
         ");
         $stmt->execute();
 
+    }
+
+    public function check_like(int $id) {
+        $this->database = new Database();
+        $idUser = $_SESSION['user_id'];
+        $idCandidate = $id;
+
+
+        $stmt = $this->database->connect()->prepare("
+            SELECT id_like FROM likes WHERE id_user=:idUser AND id_liked_user=:idCandidate AND id_match='1'
+        ");
+        $stmt->bindParam(':idUser', $idUser, PDO::PARAM_STR);
+        $stmt->bindParam(':idCandidate', $idCandidate, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $pom=0;
+        $pom = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result=false;
+        if($pom > 0)
+            $result = true;
+
+        return $result;
     }
 }

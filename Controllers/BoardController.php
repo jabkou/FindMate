@@ -36,6 +36,9 @@ class BoardController extends AppController {
         $user = new CandidateRepository();
         $user->like((int)$_POST['id']);
         http_response_code(200);
+
+        if($user->check_like((int)$_POST['id']))
+            echo 'like';
     }
 
     public function cross_user(): void

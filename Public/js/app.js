@@ -8,11 +8,13 @@ function likeUser(id) {
         url : apiUrl + '/?page=user_like_user', method : "POST",
         data : {
             id : id },
-        success: function() {
-                $("#rel").load(" #rel");
-
-        } });
-
+        dataType : 'text',
+        success: function(tex) {
+            if (tex == 'like')
+                alert("Nice! You' ve got new match ^^");
+            $("#rel").load(" #rel");
+            $("#rel2").load(" #rel2");
+        } })
 }
 
 function crossUser(id) {
@@ -27,7 +29,7 @@ function crossUser(id) {
             id : id },
         success: function() {
             $("#rel").load(" #rel");
-
+            $("#rel2").load(" #rel2");
         } });
 
 }
