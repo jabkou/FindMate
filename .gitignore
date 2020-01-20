@@ -1,7 +1,6 @@
 .idea/
 config.php
 .DS_Store
-img_01.jpg
-img_02.jpg
-img_03.jpg
+Public/img/img_0*
+
 
