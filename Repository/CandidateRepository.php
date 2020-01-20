@@ -26,7 +26,7 @@ class CandidateRepository extends Repository {
         $candidate2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 
         if($candidate2 == false || $candidate1 == false) {
-            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', 'img_00.jpg');
+            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', 'nooneelse.jpg');
         }
 
         return new Candidate(
