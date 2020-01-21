@@ -46,4 +46,40 @@ class SecurityController extends AppController {
 
         $this->render('login', ['messages' => ['You have been successfully logged out!']]);
     }
+
+    public function register(){
+
+        $userRepository = new UserRepository();
+
+        if ($this->isPost()) {
+            $email = $_POST['email'];
+            $password1 = $_POST['password1'];
+            $password2 = $_POST['password2'];
+            $name = $_POST['user_name'];
+            $birth_year = $_POST['birth_year'];
+            $gender = $_POST['gender'];
+
+            if($password1 != $password2){
+                $this->render('register', ['messages' => ['Passwords must be the same!']]);
+                return;
+            }
+
+            $user = $userRepository->addUser($email, $password1, $name, $birth_year, $gender);
+
+            if (!$user) {
+                $this->render('register', ['messages' => ['User with this email exist!']]);
+            }
+
+            $_SESSION["id"] = $user->getEmail();
+            $_SESSION["role"] = $user->getRole();
+            $_SESSION["user_id"] = $user->getId();
+
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=board");
+        }
+
+        $this->render('register');
+
+
+    }
 }

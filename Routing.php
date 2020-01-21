@@ -28,7 +28,12 @@ class Routing {
             'user_cross_user' => [
                 'controller' => 'BoardController',
                 'action' => 'cross_user'
+            ],
+            'register' => [
+                'controller' => 'SecurityController',
+                'action' => 'register'
             ]
+
         ];
     }
 

@@ -10,20 +10,8 @@ class BoardController extends AppController {
 
     public function getLatestCandidates()
     {
-//        $likeDatabase = new Database();
-//        $likeDatabase->connect();
-
         $candidateRepository = new CandidateRepository();
-
         $candidate = $candidateRepository->getCandidate();
-
-
-
-        //$candidate1 = new Candidate('Alice', 19, "Cracov", 'Apex', 'Female', "img_01.png");
-
-
-        $data = [$candidate];
-
 
         $this->render('board', ['candidate' => $candidate]);
     }
@@ -31,7 +19,7 @@ class BoardController extends AppController {
     public function like_user(): void
     {
         if (!isset($_POST['id'])) { http_response_code(404);
-        return;
+            return;
         }
         $user = new CandidateRepository();
         $user->like((int)$_POST['id']);
