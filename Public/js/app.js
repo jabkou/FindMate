@@ -10,6 +10,8 @@ function likeUser(id) {
             id : id },
         dataType : 'text',
         success: function(tex) {
+            if (tex == 'like')
+                alert("Nice! You' ve got new match ^^");
             $("#rel").load(" #rel");
             $("#rel2").load(" #rel2");
         } })
