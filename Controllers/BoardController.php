@@ -71,4 +71,22 @@ class BoardController extends AppController {
         $this->you();
 
     }
+
+    public function updateLocation(){
+
+        $pom = new CandidateRepository();
+        $pom->updateLocation((string)$_POST['newLocation']);
+
+        $this->you();
+
+    }
+
+    public function updateDescription(){
+
+        $pom = new CandidateRepository();
+        $pom->updateDescription((string)$_POST['newDescription']);
+
+        $this->you();
+
+    }
 }

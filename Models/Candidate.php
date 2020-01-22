@@ -11,10 +11,11 @@ class Candidate {
     private $game;
     private $gender;
     private $image;
+    private $description;
 
     private $database;
 
-    public function __construct(int $id, string $name, int $age, string $location, string $game,string $gender, $image)
+    public function __construct(int $id, string $name, int $age, string $location, string $game,string $gender, $image, string $description)
     {
         $this->id = $id;
         $this->name = $name;
@@ -23,6 +24,7 @@ class Candidate {
         $this->game = $game;
         $this->gender = $gender;
         $this->image = $image;
+        $this->description = $description;
     }
 
     public function getId(): int
@@ -58,6 +60,11 @@ class Candidate {
     public function getGender(): string
     {
         return $this->gender;
+    }
+
+    public function getDescription(): string
+    {
+        return $this->description;
     }
 
     public function like() {

@@ -34,7 +34,7 @@ class CandidateRepository extends Repository {
             $pom = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', $pom['photo']);
+            return new Candidate(0, 'there is no-one else', 0, 'not here', 'none', 'none', $pom['photo'], 'none');
         }
 
         return new Candidate(
@@ -44,7 +44,8 @@ class CandidateRepository extends Repository {
             $candidate2['location'],
             $candidate2['game'],
             $candidate1['gender'],
-            $candidate2["photo"]
+            $candidate2["photo"],
+            $candidate2['description']
         );
     }
 
@@ -127,7 +128,8 @@ class CandidateRepository extends Repository {
             $candidate2['location'],
             $candidate2['game'],
             $candidate1['gender'],
-            $candidate2['photo']
+            $candidate2['photo'],
+            $candidate2['description']
         );
     }
 
@@ -150,6 +152,30 @@ class CandidateRepository extends Repository {
 
         $stmt = $this->database->connect()->prepare("
             UPDATE users SET photo ='$imagetmp' WHERE id_user_data = :id
+        ");
+        $stmt->bindParam(':id', $idUser, PDO::PARAM_STR);
+
+        $stmt->execute();
+    }
+
+    public function updateLocation(string $location){
+        $this->database = new Database();
+        $idUser = $_SESSION['user_id'];
+
+        $stmt = $this->database->connect()->prepare("
+            UPDATE users SET location = '$location' WHERE id_user_data = :id
+        ");
+        $stmt->bindParam(':id', $idUser, PDO::PARAM_STR);
+
+        $stmt->execute();
+    }
+
+    public function updateDescription(string $description){
+        $this->database = new Database();
+        $idUser = $_SESSION['user_id'];
+
+        $stmt = $this->database->connect()->prepare("
+            UPDATE users SET description = '$description' WHERE id_user_data = :id
         ");
         $stmt->bindParam(':id', $idUser, PDO::PARAM_STR);
 

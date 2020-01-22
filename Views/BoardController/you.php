@@ -45,7 +45,7 @@ if (!in_array('ROLE_USER', $_SESSION['role'])) {
             <div class="twoForms">
 
                 <form method="post" action="?page=updateDescription" class="you">
-                    <textarea name="newDescription" required placeholder="Description"></textarea>
+                    <textarea name="newDescription" required placeholder="Description (max 150 characters)" maxlength="150"></textarea>
                     <button class="continue" type="submit">CONTINUE</button>
                 </form>
 
@@ -75,6 +75,9 @@ if (!in_array('ROLE_USER', $_SESSION['role'])) {
                         <div>
                             <?= $active_user->getGame() ?>
                         </div>
+                    </div>
+                    <div class="description">
+                        <?= $active_user->getDescription() ?>
                     </div>
                 </div>
             </div>

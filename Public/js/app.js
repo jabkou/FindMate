@@ -1,6 +1,6 @@
 function likeUser(id) {
     if(id == 0){
-        alert('there is noone else');
+        alert('there is no-one else');
         return;
     }
     const apiUrl = "http://localhost:8001";
@@ -19,7 +19,7 @@ function likeUser(id) {
 
 function crossUser(id) {
     if(id == 0){
-        alert('there is noone else');
+        alert('there is no-one else');
         return;
     }
     const apiUrl = "http://localhost:8001";

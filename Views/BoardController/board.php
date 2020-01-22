@@ -47,6 +47,9 @@ if (!in_array('ROLE_USER', $_SESSION['role'])) {
                             <?= $candidate->getGame() ?>
                         </div>
                     </div>
+                    <div class="description">
+                        <?= $candidate->getDescription() ?>
+                    </div>
                 </div>
             </div>
         </div>
