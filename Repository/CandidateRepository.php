@@ -9,7 +9,7 @@ class CandidateRepository extends Repository {
     {
         $id = $_SESSION["user_id"];
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_data WHERE NOT id_user_data = :id AND NOT id_user_data = 15 AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE user_data.id_user_data = id_liked_user))
+            SELECT * FROM user_data WHERE NOT id_user_data = :id AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE user_data.id_user_data = id_liked_user))
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
@@ -18,7 +18,7 @@ class CandidateRepository extends Repository {
 
 
         $stmt2 = $this->database->connect()->prepare('
-            SELECT * FROM users WHERE NOT id_user_data = :id AND NOT id_user_data = 15 AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE users.id_user_data = id_liked_user))
+            SELECT * FROM users WHERE NOT id_user_data = :id AND NOT role = 1 AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE users.id_user_data = id_liked_user))
         ');
         $stmt2->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt2->execute();

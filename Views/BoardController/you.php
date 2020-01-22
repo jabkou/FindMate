@@ -25,19 +25,22 @@ if (!in_array('ROLE_USER', $_SESSION['role'])) {
 <?php include(dirname(__DIR__) . '/Common/navbar.php'); ?>
 <div class="container">
     <div class="all">
-        <div class="forms">
 
+        <div class="col">
+            <div class="youInfo">Update information about yourself</div>
+
+        <div class="forms">
 
             <div class="twoForms">
 
                 <form method="post" action="?page=updateGame" class="you">
                     <input type="text" name="newGame" required="required" placeholder="Games">
-                    <button class="continue" type="submit">CONTINUE</button>
+                    <button class="continue" type="submit">continue</button>
                 </form>
 
                 <form method="POST" action="?page=updatePhoto" enctype="multipart/form-data" class="you">
                     <input type="file" name="myImage" required="required">
-                    <button class="continue" type="submit" value="Upload">CONTINUE</button>
+                    <button class="continue" type="submit" value="Upload">continue</button>
                 </form>
 
             </div>
@@ -46,15 +49,16 @@ if (!in_array('ROLE_USER', $_SESSION['role'])) {
 
                 <form method="post" action="?page=updateDescription" class="you">
                     <textarea name="newDescription" required placeholder="Description (max 150 characters)" maxlength="150"></textarea>
-                    <button class="continue" type="submit">CONTINUE</button>
+                    <button class="continue" type="submit">continue</button>
                 </form>
 
                 <form method="post" action="?page=updateLocation" class="you">
                     <input type="text" name="newLocation" required="required" placeholder="Location">
-                    <button class="continue" type="submit">CONTINUE</button>
+                    <button class="continue" type="submit">continue</button>
                 </form>
 
             </div>
+        </div>
         </div>
 
 

@@ -182,7 +182,8 @@ form > input {
     background: transparent;
     border-bottom: 2px solid gray;
     border-top: none;
-    border-left: none;
+    border-left: 2px solid gray;
+    border-bottom-left-radius: 1em;
     border-right: none;
     height: 2.5em;
 
@@ -192,6 +193,42 @@ form > input {
 }
 
 button.continue {
+    align-self: center;
+    margin: 0;
+    border: 0.1em solid #665EFF;
+    border-radius: 2em;
+    color: lightgray ;
+    background-color: transparent ;
+    min-height: 2em;
+    width: 12em;
+
+    line-height: 0;
+    font-size: 0.8em;
     margin-top: 1.5em;
     margin-bottom: 6em;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+}
+
+.youInfo {
+    margin-top: -3em;
+    margin-bottom: 4em;
+    color: #767676;
+    font-size: 1.8em;
+
+}
+
+.col {
+    text-align: center;
+    text-justify: distribute;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+#logout {
+    align-self: center;
 }

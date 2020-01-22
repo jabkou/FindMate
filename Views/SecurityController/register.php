@@ -23,7 +23,7 @@
             }
             ?>
         </div>
-        <input name="email" required="required" type="text" placeholder="email@sth.com">
+        <input name="email" required="required" type="email" placeholder="email@sth.com">
         <input name="password1" required="required" type="password" placeholder="password">
         <input name="password2" required="required" type="password" placeholder="repeat password">
         <input name="user_name" required="required" type="text" placeholder="name">
