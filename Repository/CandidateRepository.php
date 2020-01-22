@@ -9,7 +9,7 @@ class CandidateRepository extends Repository {
     {
         $id = $_SESSION["user_id"];
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_data WHERE NOT id_user_data = :id AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE user_data.id_user_data = id_liked_user))
+            SELECT * FROM user_data WHERE NOT id_user_data = :id AND NOT id_user_data = 15 AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE user_data.id_user_data = id_liked_user))
         ');
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
@@ -18,7 +18,7 @@ class CandidateRepository extends Repository {
 
 
         $stmt2 = $this->database->connect()->prepare('
-            SELECT * FROM users WHERE NOT id_user = :id AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE users.id_user_data = id_liked_user))
+            SELECT * FROM users WHERE NOT id_user_data = :id AND NOT id_user_data = 15 AND NOT :id IN (SELECT id_user FROM likes WHERE id_user = :id AND id_liked_user IN (SELECT id_liked_user FROM likes WHERE users.id_user_data = id_liked_user))
         ');
         $stmt2->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt2->execute();
@@ -26,7 +26,15 @@ class CandidateRepository extends Repository {
         $candidate2 = $stmt2->fetch(PDO::FETCH_ASSOC);
 
         if($candidate2 == false || $candidate1 == false) {
-            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', 'nooneelse.jpg');
+
+            $stmt = $this->database->connect()->prepare("
+            SELECT photo FROM users WHERE id_user_data=15
+        ");
+            $stmt->execute();
+            $pom = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+            return new Candidate(0, 'there is noone else,', 0, 'not here', 'none', 'none', $pom['photo']);
         }
 
         return new Candidate(
@@ -36,7 +44,7 @@ class CandidateRepository extends Repository {
             $candidate2['location'],
             $candidate2['game'],
             $candidate1['gender'],
-            $candidate2['photo']
+            $candidate2["photo"]
         );
     }
 
@@ -89,5 +97,62 @@ class CandidateRepository extends Repository {
             $result = true;
 
         return $result;
+    }
+
+    public function getCandidateMe(): ?Candidate
+    {
+        $id = $_SESSION["user_id"];
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM user_data WHERE id_user_data = :id
+        ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $candidate1 = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        $stmt2 = $this->database->connect()->prepare('
+            SELECT * FROM users WHERE id_user_data = :id 
+        ');
+        $stmt2->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt2->execute();
+
+        $candidate2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+
+        return new Candidate(
+            $candidate2['id_user_data'],
+            $candidate1['user_name'],
+            $candidate1['age'],
+            $candidate2['location'],
+            $candidate2['game'],
+            $candidate1['gender'],
+            $candidate2['photo']
+        );
+    }
+
+    public function updateGame(string $game){
+        $this->database = new Database();
+        $idUser = $_SESSION['user_id'];
+
+        $stmt = $this->database->connect()->prepare("
+            UPDATE users SET game = '$game' WHERE id_user_data = :id
+        ");
+        $stmt->bindParam(':id', $idUser, PDO::PARAM_STR);
+
+        $stmt->execute();
+    }
+
+    public function updatePhoto($imagetmp){
+        $this->database = new Database();
+        $idUser = $_SESSION['user_id'];
+
+
+        $stmt = $this->database->connect()->prepare("
+            UPDATE users SET photo ='$imagetmp' WHERE id_user_data = :id
+        ");
+        $stmt->bindParam(':id', $idUser, PDO::PARAM_STR);
+
+        $stmt->execute();
     }
 }

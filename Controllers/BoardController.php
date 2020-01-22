@@ -38,4 +38,37 @@ class BoardController extends AppController {
         $user->cross((int)$_POST['id']);
         http_response_code(200);
     }
+
+    public function you()
+    {
+        $active_user_repository = new CandidateRepository();
+        $active_user = $active_user_repository->getCandidateMe();
+
+
+
+        $this->render('you', ['active_user' => $active_user]);
+    }
+
+    public function updateGame(){
+
+        $pom = new CandidateRepository();
+        $pom->updateGame((string)$_POST['newGame']);
+
+        $this->you();
+
+    }
+    public function updatePhoto(){
+
+        $pom = new CandidateRepository();
+
+        $imagetmp=addslashes(file_get_contents($_FILES['myImage']['tmp_name']));
+
+        $pom->updatePhoto($imagetmp);
+
+
+
+
+        $this->you();
+
+    }
 }

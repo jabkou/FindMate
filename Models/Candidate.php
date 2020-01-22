@@ -14,7 +14,7 @@ class Candidate {
 
     private $database;
 
-    public function __construct(int $id, string $name, int $age, string $location, string $game,string $gender, string $image)
+    public function __construct(int $id, string $name, int $age, string $location, string $game,string $gender, $image)
     {
         $this->id = $id;
         $this->name = $name;
@@ -50,7 +50,7 @@ class Candidate {
         return $this->game;
     }
 
-    public function getImage(): string
+    public function getImage()
     {
         return $this->image;
     }

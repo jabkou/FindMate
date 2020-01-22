@@ -39,11 +39,11 @@ class UserRepository extends Repository {
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($user == true) {
+        if($user) {
             return null;
         }
         $stmt = $this->database->connect()->prepare("
-            INSERT INTO user_data (user_name, age, gender, email, password) VALUES ('$name', '$birth_year', '$gender', '$email', '$password')
+        CALL AddUser ('$email', '$password', '$name', '$birth_year', '$gender')
         ");
         $stmt->execute();
 

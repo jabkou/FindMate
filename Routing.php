@@ -32,6 +32,26 @@ class Routing {
             'register' => [
                 'controller' => 'SecurityController',
                 'action' => 'register'
+            ],
+            'you' => [
+                'controller' => 'BoardController',
+                'action' => 'you'
+            ],
+            'updateGame' => [
+                'controller' => 'BoardController',
+                'action' => 'updateGame'
+            ],
+            'updatePhoto' => [
+                'controller' => 'BoardController',
+                'action' => 'updatePhoto'
+            ],
+            'updateDescription' => [
+                'controller' => 'BoardController',
+                'action' => 'updateDescription'
+            ],
+            'updateLocation' => [
+                'controller' => 'BoardController',
+                'action' => 'updateLocation'
             ]
 
         ];

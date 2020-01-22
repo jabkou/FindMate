@@ -11,14 +11,18 @@
             </li>
             <li>
                 <div class="bottombuttons">
+                    <a class="nav-link" href="?page=you">
                     <button><i class="far fa-user fa-2x"></i></button>
+                    </a>
                     You
                 </div>
             </li>
             <li>
                 <div class="bottombuttons">
+                    <a class="nav-link" href="?page=board">
                     <button><i class="far fa-bell fa-2x"></i></button>
-                    News
+                    </a>
+                    Board
                 </div>
             </li>
             <li>
