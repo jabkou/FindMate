@@ -232,3 +232,16 @@ button.continue {
 #logout {
     align-self: center;
 }
+
+#up {
+    align-self: flex-start;
+    margin-top: 2em;
+}
+
+#getUsers {
+    justify-self: center;
+}
+
+.del {
+    border-color: darkred;
+}

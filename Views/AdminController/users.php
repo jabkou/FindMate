@@ -12,20 +12,24 @@ if ($_SESSION['role'] != '1') {
 <head>
     <meta charset="UTF-8">
     <?php include(dirname(__DIR__).'/Common/head.php'); ?>
-    <link rel="Stylesheet" type="text/css" href="../Public/css/board.css" />
-    <title>picmash</title>
+    <link rel="Stylesheet" type="text/css" href="/Public/css/board.css" />
+    <title>findMate</title>
 </head>
 <body>
 <?php include(dirname(__DIR__).'/Common/navbar.php'); ?>
 <div class="container">
-    <div class="col-6">
+    <div class="all">
+    <div class="col-6" id="up">
         <table class="table mt-4 text-light">
             <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Id</th>
                 <th scope="col">Email</th>
                 <th scope="col">Name</th>
-                <th scope="col">Surname</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Age</th>
+                <th scope="col">Role</th>
+                <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -33,15 +37,19 @@ if ($_SESSION['role'] != '1') {
                 <th scope="row"><?= $user->getId(); ?></th>
                 <td><?= $user->getEmail(); ?></td>
                 <td><?= $user->getName(); ?></td>
-                <td><?= $user->getSurname(); ?></td>
+                <td><?= $user->getGender(); ?></td>
+                <td><?= $user->getAge(); ?></td>
+                <td><?= $user->getRole(); ?></td>
+                <td></td>
             </tr>
             </tbody>
             <tbody class="users-list">
             </tbody>
         </table>
-        <button class="btn-primary btn-lg ml-0" type="button" onclick="getUsers()">
+        <button type="button" onclick="getUsers()">
             Get all users
         </button>
+    </div>
     </div>
 </div>
 </body>

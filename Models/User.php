@@ -3,7 +3,7 @@
 class User
 {
     private $id;
-    private $email;
+    public $email;
     private $password;
     private $name;
     private $age;
@@ -32,6 +32,11 @@ class User
     public function getEmail(): string
     {
         return $this->email;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
     }
 
     public function getPassword() : string
