@@ -8,7 +8,7 @@ class UserRepository extends Repository {
     public function getUser(string $email): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_data WHERE email = :email
+            SELECT * FROM user_view WHERE email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -25,7 +25,8 @@ class UserRepository extends Repository {
             $user['user_name'],
             $user['gender'],
             $user['age'],
-            $user['id_user_data']
+            $user['id_user_data'],
+            $user['role']
         );
     }
 
@@ -49,7 +50,7 @@ class UserRepository extends Repository {
 
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_data WHERE email = :email
+            SELECT * FROM user_view WHERE email = :email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -62,7 +63,8 @@ class UserRepository extends Repository {
             $user['user_name'],
             $user['gender'],
             $user['age'],
-            $user['id_user_data']
+            $user['id_user_data'],
+            $user['role']
         );
     }
 

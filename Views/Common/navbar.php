@@ -34,7 +34,9 @@
         </ul>
 
     </div>
+    <a href="?page=admin">
         <div class="continue" id="right">
             <button><i class="fas fa-users-cog"></i></i></i></button>
         </div>
+    </a>
 </nav>

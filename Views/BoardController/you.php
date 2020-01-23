@@ -3,7 +3,7 @@ if (!isset($_SESSION['id']) and !isset($_SESSION['role'])) {
     die('You are not logged in!');
 }
 
-if (!in_array('ROLE_USER', $_SESSION['role'])) {
+if ($_SESSION['role'] != '1' && $_SESSION['role'] != '2') {
     die('You do not have permission to watch this page!');
 }
 ?>
@@ -11,14 +11,8 @@ if (!in_array('ROLE_USER', $_SESSION['role'])) {
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="Stylesheet" type="text/css" href="../../Public/css/style.css"/>
-    <link rel="Stylesheet" type="text/css" href="../../Public/css/board.css">
-    <script src="https://kit.fontawesome.com/67b82f3810.js" crossorigin="anonymous"></script>
-    <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <?php include(dirname(__DIR__) . '/Common/head.php'); ?>
+    <link rel="Stylesheet" type="text/css" href="../../Public/css/board.css">
     <title>findMate</title>
 </head>
 <body>

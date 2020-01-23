@@ -8,7 +8,7 @@ class User
     private $name;
     private $age;
     private $gender;
-    private $role = ['ROLE_USER'];
+    private $role;
 
     public function __construct(
         string $email,
@@ -16,7 +16,8 @@ class User
         string $name,
         string $gender,
         int $age,
-        int $id
+        int $id,
+        int $role
     )
     {
         $this->id = $id;
@@ -25,6 +26,7 @@ class User
         $this->name = $name;
         $this->gender = $gender;
         $this->age = $age;
+        $this->role=$role;
     }
 
     public function getEmail(): string
@@ -37,7 +39,7 @@ class User
         return $this->password;
     }
 
-    public function getRole(): array
+    public function getRole(): int
     {
         return $this->role;
     }
