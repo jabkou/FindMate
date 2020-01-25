@@ -9,7 +9,6 @@ class SecurityController extends AppController {
 
     public function login()
     {
-        //$user = new User('stop@do.nt', '1234', 'Fake', 'SurFake');
         $userRepository = new UserRepository();
 
         if ($this->isPost()) {
@@ -23,7 +22,8 @@ class SecurityController extends AppController {
                 return;
             }
 
-            if ($user->getPassword() !== $password) {
+
+            if (!password_verify( $password, $user->getPassword() )) {
                 $this->render('login', ['messages' => ['Wrong password!']]);
                 return;
             }
@@ -63,8 +63,10 @@ class SecurityController extends AppController {
                 $this->render('register', ['messages' => ['Passwords must be the same!']]);
                 return;
             }
+            $password_hash = password_hash($password1, PASSWORD_BCRYPT);
 
-            $user = $userRepository->addUser($email, $password1, $name, $birth_year, $gender);
+
+            $user = $userRepository->addUser($email, $password_hash, $name, $birth_year, $gender);
 
             if (!$user) {
                 $this->render('register', ['messages' => ['User with this email exist!']]);

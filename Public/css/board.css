@@ -245,3 +245,473 @@ button.continue {
 .del {
     border-color: darkred;
 }
+
+
+@media screen and (max-width: 1366px) {
+    .candidate {
+        display: block;
+        width: 22em;
+        height: 38em;
+        margin-left: 2em;
+    }
+
+    .pom {
+        border-radius: 0 7em 0 0;
+    }
+
+    .candidate > div {
+        border-radius: 0 0 0 5em;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1112px) {
+    .all {
+        margin-bottom: 6em;
+    }
+
+    .candidate {
+        display: block;
+        width: 22em;
+        height: 36em;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+
+    .board {
+        margin-top: 2em;
+    }
+
+    .rightColumn i {
+        font-size: 4em;
+    }
+
+    .pom {
+        border-radius: 0 7em 0 0;
+    }
+
+    .candidate > div {
+        border-radius: 0 0 0 5em;
+    }
+
+    .bottombuttons {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+
+    .bottombuttons button {
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .log {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .all {
+        margin-bottom: 10em;
+    }
+
+    .candidate {
+        display: block;
+        width: 22em;
+        height: 36em;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .info {
+        font-size: 13px;
+    }
+
+    .description {
+        font-size: 11px;
+    }
+
+
+    .board {
+        margin-top: 2em;
+    }
+
+    .rightColumn i {
+        font-size: 4em;
+    }
+
+    .pom {
+        border-radius: 0 7em 0 0;
+    }
+
+    .candidate > div {
+        border-radius: 0 0 0 5em;
+    }
+
+    .bottombuttons {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+
+    .bottombuttons button {
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .log {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .candidate {
+        display: block;
+        width: 18em;
+        height: 30em;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 11px;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+
+    .tweet {
+        display: none;
+    }
+
+    .board {
+        flex-basis: 65%;
+        align-self: flex-start;
+        margin-top: 2em;
+    }
+
+    .rightColumn i {
+        font-size: 4em;
+    }
+
+    .rightColumn {
+        flex-basis: 35%;
+    }
+
+    .pom {
+        border-radius: 0 7em 0 0;
+    }
+
+    .candidate > div {
+        border-radius: 0 0 0 5em;
+    }
+
+    .bottombuttons {
+        font-size: 0.5em;
+        margin-bottom: 0;
+    }
+
+    #right {
+        font-size: 0.5em;
+    }
+
+
+    .bottombuttons button {
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .log {
+        font-size: 0.6em;
+    }
+}
+
+@media screen and (max-width: 414px) {
+
+    .all {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .candidate {
+        display: block;
+        width: 20em;
+        height: 33em;
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-top: -6em;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 11px;
+    }
+
+    .tweet {
+        display: none;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+
+    .tweet {
+        display: none;
+    }
+
+    .board {
+        flex-basis: unset;
+        align-self: unset;
+        margin-top: 2em;
+    }
+
+    .rightColumn i {
+        font-size: 4em;
+    }
+
+    .pom {
+        border-radius: 0 6em 0 0;
+    }
+
+    .candidate > div {
+        border-radius: 0 0 0 4em;
+    }
+
+    .bottombuttons {
+        font-size: 0.5em;
+        margin-bottom: 0;
+    }
+
+
+    .bottombuttons button {
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .log {
+        font-size: 0.6em;
+    }
+
+    .rightColumn {
+        flex-basis: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .all {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .candidate {
+        display: block;
+        width: 18em;
+        height: 30em;
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-top: -5em;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 11px;
+    }
+
+    .tweet {
+        display: none;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+
+    .tweet {
+        display: none;
+    }
+
+    .board {
+        flex-basis: unset;
+        align-self: unset;
+        margin-top: 2em;
+    }
+
+    .rightColumn i {
+        font-size: 4em;
+    }
+
+    .pom {
+        border-radius: 0 6em 0 0;
+    }
+
+    .candidate > div {
+        border-radius: 0 0 0 4em;
+    }
+
+    .bottombuttons {
+        font-size: 0.5em;
+        margin-bottom: 0;
+    }
+
+
+    .bottombuttons button {
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .log {
+        font-size: 0.6em;
+    }
+
+    .rightColumn {
+        flex-basis: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .all {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .candidate {
+        display: block;
+        width: 17em;
+        height: 28em;
+        margin-left: 0;
+        margin-bottom: -1em;
+        margin-top: -4em;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 11px;
+    }
+
+    .tweet {
+        display: none;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+
+    .tweet {
+        display: none;
+    }
+
+    .board {
+        flex-basis: unset;
+        align-self: unset;
+        margin-top: 2em;
+    }
+
+    .rightColumn i {
+        font-size: 2.5em;
+    }
+
+    .pom {
+        border-radius: 0 6em 0 0;
+    }
+
+    .candidate > div {
+        border-radius: 0 0 0 4em;
+    }
+
+    .bottombuttons {
+        font-size: 0.45em;
+        margin-bottom: 0;
+    }
+
+
+    .bottombuttons button {
+        height: 5em;
+        width: 5em;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .log {
+        font-size: 0.4em;
+    }
+
+    .rightColumn {
+        flex-basis: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /*.twoForms {*/
+    /*    width: 25%;*/
+    /*    height: 25%;*/
+    /*    align-self: flex-end;*/
+    /*}*/
+
+    /*.twoForms button {*/
+    /*    width: 50%;*/
+    /*    font-size: 0.65em;*/
+    /*}*/
+
+    /*#you {*/
+    /*    display: none;*/
+    /*}*/
+
+    /*.youInfo {*/
+    /*    display: none;*/
+    /*}*/
+
+}

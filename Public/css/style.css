@@ -26,6 +26,7 @@ form {
     height: 50%;
     width: 30%;
     justify-content: center;
+    margin-left: 2em;
     /* padding-bottom: 9em;*/
 }
 
@@ -127,6 +128,7 @@ div.logo > img {
         width: 100%;
     }
 
+
     div.logo > img {
         width: 7.5em;
     }
@@ -134,7 +136,7 @@ div.logo > img {
 
 @media screen and (max-width: 600px) {
     body {
-        font-size: 18px;
+        font-size: 15px;
     }
     .container {
         flex-direction: column;

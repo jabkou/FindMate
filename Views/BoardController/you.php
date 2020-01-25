@@ -57,7 +57,7 @@ if ($_SESSION['role'] != '1' && $_SESSION['role'] != '2') {
 
 
         <div class="board">
-            <div class="candidate">
+            <div class="candidate" id="you">
                 <?php
                 echo '  
                         
