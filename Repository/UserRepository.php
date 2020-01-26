@@ -85,20 +85,20 @@ class UserRepository extends Repository
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($users as $user) {
-            $result[] = new User(
-                $user['email'],
-                $user['password'],
-                $user['user_name'],
-                $user['gender'],
-                $user['age'],
-                $user['id_user_data'],
-                $user['role']
-            );
-        }
+//        foreach ($users as $user) {
+//            $result[] = new User(
+//                $user['email'],
+//                $user['password'],
+//                $user['user_name'],
+//                $user['gender'],
+//                $user['age'],
+//                $user['id_user_data'],
+//                $user['role']
+//            );
+//        }
 
 
-        return $result;
+        return $users;
     }
 
     public function getCopyOfUsers(): array

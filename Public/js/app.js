@@ -39,8 +39,8 @@ function getUsers() {
     const $list = $('.users-list');
 
     $.ajax({
-        url : apiUrl + '/?page=users',
-        dataType : 'json'
+        url: apiUrl + '/?page=users',
+        dataType: 'json'
     })
         .done((res) => {
             $list.empty();
@@ -61,7 +61,6 @@ function getUsers() {
             });
         });
 }
-
 
 function deleteUser(id) {
     if (!confirm('Do you really want to delete this user?')) {

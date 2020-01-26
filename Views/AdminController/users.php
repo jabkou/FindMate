@@ -19,6 +19,9 @@ if ($_SESSION['role'] != '1') {
 <?php include(dirname(__DIR__).'/Common/navbar.php'); ?>
 <div class="container">
     <div class="all">
+        <button type="button" id="up2" onclick="getUsers()">
+            Get all users
+        </button>
     <div class="col-6" id="up">
         <table class="table mt-4 text-light">
             <thead>
@@ -46,11 +49,10 @@ if ($_SESSION['role'] != '1') {
             <tbody class="users-list">
             </tbody>
         </table>
-        <button type="button" onclick="getUsers()">
-            Get all users
-        </button>
     </div>
+
     </div>
+
 </div>
 </body>
 </html>

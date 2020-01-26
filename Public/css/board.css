@@ -34,6 +34,7 @@
     display: block;
     width: 26em;
     height: 44em;
+    margin-left: 2em;
 }
 
 .pom {
@@ -235,7 +236,14 @@ button.continue {
 
 #up {
     align-self: flex-start;
-    margin-top: 2em;
+    margin-top: 1em;
+    font-size: 0.7em;
+}
+
+#up2 {
+    align-self: flex-start;
+    margin-top: 4em;
+    font-size: 0.8em;
 }
 
 #getUsers {

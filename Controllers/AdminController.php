@@ -15,13 +15,11 @@ class AdminController extends AppController
 
     public function users()
     {
-        $userRepository = new UserRepository();
 
+        $user = new UserRepository();
         header('Content-type: application/json');
         http_response_code(200);
-
-        $users = $userRepository->getCopyOfUsers();
-        echo $users ? json_encode($users) : '';
+        echo $user->getCopyOfUsers() ? json_encode($user->getCopyOfUsers()) : '';
     }
 
     public function deleteUser()
